@@ -38,6 +38,8 @@
 
 #include <evldns.h>
 
+#include "network.h"
+
 using std::string;
 
 class APZone {
@@ -545,8 +547,10 @@ int main(int argc, char *argv[])
 	/* setup evldns */
 	event_init();
 	evldns_server *p = evldns_add_server();
-	evldns_add_server_port(p, bind_to_udp4_port(53));
-	evldns_add_server_port(p, bind_to_tcp4_port(53, 10));
+	evldns_add_server_port(p, _a_bind_to_udp4_port(5300));
+	evldns_add_server_port(p, _a_bind_to_tcp4_port(5300, 10));
+	evldns_add_server_port(p, _a_bind_to_udp6_port(5300));
+	evldns_add_server_port(p, _a_bind_to_tcp6_port(5300, 10));
 
 	/* TODO - drop privs here if running as root */
 
