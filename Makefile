@@ -1,6 +1,6 @@
 EVLDNS_PATH		= /opt/local
-LDNS_PATH		= /usr/local
-LIBEV_PATH		= /usr/local
+LDNS_PATH		= /opt/local
+LIBEV_PATH		= /opt/local
 
 CPPFLAGS		= -I$(EVLDNS_PATH)/include -I$(LDNS_PATH)/include -I$(LIBEV_PATH)/include
 CXXFLAGS		= -g -O3
